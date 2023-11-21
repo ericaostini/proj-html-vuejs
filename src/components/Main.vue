@@ -42,6 +42,16 @@
                 <button class="btn text-uppercase text-light">Get started</button>
             </div>
         </section>
+        <section id="project">
+            <h4 class="text-light">project</h4>
+            <div class="border-green"></div>
+            <h3 class="text-light">Our expert trusted consultants help clients</h3>
+            <div class="row">
+                <div class="col-4" v-for="(project, indexP) in this.store.projects">
+                    <img :src="project.image" :alt="project.content">
+                </div>
+            </div>
+        </section>
     </main>
 </template>
 
@@ -86,6 +96,7 @@ export default {
         position: relative;
         background-color: $mainGreen;
         padding: 100px;
+        margin-bottom: 160px;
 
         button {
             position: absolute;
@@ -97,5 +108,13 @@ export default {
         }
     }
 
+}
+
+#project {
+    padding: 20px;
+
+    img {
+        width: 450px;
+    }
 }
 </style>

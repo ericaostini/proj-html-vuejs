@@ -19,7 +19,7 @@
                 <div class="col-8">
                     <img :src="'/images/business-people-working-together-on-project-and-5FHSKBL.jpg'" alt="">
                 </div>
-                <div class="col-4 text-light">
+                <div class="col-4 text-light p-5">
                     <h4>about us</h4>
                     <div class="border-green"></div>
                     <h2 class="text-light">We make your strategy work</h2>
@@ -30,6 +30,16 @@
                         best
                         strategy for you.</p>
                 </div>
+            </div>
+            <div class="get-started me-4">
+                <div class="d-flex align-items-center justify-content-around">
+                    <h3 class="w-25">We help to deliver the business case</h3>
+                    <p class="w-50">We find that success comes from employing an “inside company” approach to help us better
+                        understand the
+                        internal dynamics and factors that are as critical to a positive outcome as the external conditions.
+                    </p>
+                </div>
+                <button class="btn text-uppercase text-light">Get started</button>
             </div>
         </section>
     </main>
@@ -70,6 +80,21 @@ export default {
         height: 550px;
         object-fit: cover;
         object-position: top;
+    }
+
+    .get-started {
+        position: relative;
+        background-color: $mainGreen;
+        padding: 100px;
+
+        button {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background-color: $mainRed;
+            padding: 20px 80px;
+            border-radius: 1px;
+        }
     }
 
 }

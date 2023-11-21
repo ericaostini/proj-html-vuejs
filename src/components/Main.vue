@@ -63,6 +63,27 @@
                 </div>
             </div>
         </section>
+        <section id="blog" class="px-4">
+            <h4 class="text-light">blog</h4>
+            <div class="border-green"></div>
+            <div class="d-flex justify-content-between align-items-center">
+                <h3 class="text-light">The recent news you must read it</h3>
+                <button class="btn text-uppercase">view all</button>
+            </div>
+            <div class="row justify-content-between">
+                <div class="col-6 blog-info" v-for="(blog, indexBlog) in this.store.blogInfo">
+                    <img :src="blog.image" :alt="blog.title">
+                    <div class="col-8 bg-light info-over">
+                        <div class="d-flex">
+                            <p>{{ blog.date }} - </p>
+                            <p> by {{ blog.name }}</p>
+                        </div>
+                        <h5>{{ blog.title }}</h5>
+                        <p>{{ blog.text }}</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 </template>
 
@@ -131,8 +152,35 @@ export default {
 }
 
 #testimonial {
+    margin-bottom: 160px;
+
     h3 {
         text-align: end;
+    }
+}
+
+#blog {
+    button {
+        background-color: $mainGreen;
+        padding: 20px 80px;
+        border-radius: 1px;
+
+    }
+
+    .blog-info {
+
+        img {
+            width: 685px;
+        }
+
+        .info-over {
+            position: relative;
+            top: -200px;
+            right: -230px;
+            font-size: 20px;
+
+            padding: 40px 60px;
+        }
     }
 }
 </style>

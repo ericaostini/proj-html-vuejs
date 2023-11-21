@@ -16,6 +16,12 @@
                 </div>
             </div>
         </div>
+        <div class="text-light text-uppercase w-50">
+            <h5>Always the best way you need it</h5>
+            <h1>The best business consulting</h1>
+            <button class="btn btn-success">read more</button>
+            <i class="fa-regular fa-circle-play"></i>
+        </div>
     </header>
 </template>
 

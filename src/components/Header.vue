@@ -1,14 +1,15 @@
 <template>
     <div class="container">
-        <div class="row">
-            <div class="col-4">
+        <div class="row align-items-center">
+            <div class="col-4 logo">
                 <img :src="'/images/logotype.png'" alt="logo Phlox">
             </div>
-            <div class="col-4">
-                <ul class="nav justify-content-end">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#"
-                            v-for="(item, navIndex) in this.store.navBar">{{ item.navItem }}</a>
+            <div class="col-8">
+                <ul class="nav d-flex justify-content-end">
+                    <li class="nav-item d-flex" v-for="(item, navIndex) in this.store.navBar">
+                        <a class="nav-link pt-4 mx-2" aria-current="page" href="#"
+                            :class="{ 'border-active': item.active === true }">{{
+                                item.navItem }}</a>
                     </li>
                 </ul>
             </div>
@@ -29,4 +30,17 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@use '../assets/style/partials/variables' as *;
+
+.logo {
+    img {
+        width: auto;
+        height: 20px;
+    }
+}
+
+.border-active {
+    border-top: 3px solid red
+}
+</style>

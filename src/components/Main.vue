@@ -168,6 +168,7 @@ export default {
     }
 
     .blog-info {
+        margin-bottom: 60px;
 
         img {
             width: 685px;

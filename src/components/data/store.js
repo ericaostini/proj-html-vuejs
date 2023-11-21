@@ -58,5 +58,22 @@ export const store = reactive({
             image: '/images/z1el4c4p-790x592.jpg',
             content: 'Vizeon Project'
         }
+    ],
+    opinions: [
+        {
+            text: 'When, while lovely valley teems with vapour around meand eridian sun strikes the upper impenetrable foliage of my trees, and but a thousand unknown plants are noticed by when I hear the buzz of the little ',
+            name: 'Vera Duncan',
+            company: 'Amazon Inc.'
+        },
+        {
+            text: 'When, while lovely valley teems with vapour around meand eridian sun strikes the upper impenetrable foliage of my trees, and but a thousand unknown plants are noticed by when I hear the buzz of the little ',
+            name: 'Vera Duncan',
+            company: 'Amazon Inc.'
+        },
+        {
+            text: 'When, while lovely valley teems with vapour around meand eridian sun strikes the upper impenetrable foliage of my trees, and but a thousand unknown plants are noticed by when I hear the buzz of the little ',
+            name: 'Vera Duncan',
+            company: 'Amazon Inc.'
+        }
     ]
 });

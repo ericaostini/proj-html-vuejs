@@ -52,6 +52,17 @@
                 </div>
             </div>
         </section>
+        <section id="testimonial">
+            <h4 class="text-light text-center">testimonial</h4>
+            <h3 class="text-light pe-3">What's the customer say about our work</h3>
+            <div class="row ms-4">
+                <div class="col-4 bg-light p-5" v-for="(opinion, indexOp) in this.store.opinions">
+                    <p>{{ opinion.text }}</p>
+                    <h5>{{ opinion.name }}</h5>
+                    <p>{{ opinion.company }}</p>
+                </div>
+            </div>
+        </section>
     </main>
 </template>
 
@@ -112,9 +123,16 @@ export default {
 
 #project {
     padding: 20px;
+    margin-bottom: 140px;
 
     img {
         width: 450px;
+    }
+}
+
+#testimonial {
+    h3 {
+        text-align: end;
     }
 }
 </style>

@@ -26,7 +26,7 @@
                 </div>
                 <div class="col-4 text-light p-5">
                     <div class="d-flex align-items-center">
-                        <div class="border-green small-line"></div>
+                        <div class="border-green medium-line"></div>
                         <h6 class="mx-3 text-uppercase pt-2 fw-light">about us</h6>
                     </div>
                     <h1 class="text-light fw-bold">We make your strategy work</h1>
@@ -74,7 +74,7 @@
         <section id="testimonial">
             <h5 class="text-light text-center fw-light text-uppercase">testimonial</h5>
             <h1 class="text-light p-4">What's the customer say about our work</h1>
-            <div class="row ms-4">
+            <div class="row">
                 <div class="col-4 bg-light g-0" v-for="(opinion, indexOp) in this.store.opinions">
                     <div class="container-overlay">
                         <div class="front p-5">
@@ -90,22 +90,24 @@
             </div>
         </section>
         <section id="blog" class="px-4">
-            <h4 class="text-light">blog</h4>
-            <div class="border-green"></div>
+            <div class="d-flex align-items-center">
+                <div class="border-green small-line"></div>
+                <h5 class="mx-3 text-uppercase pt-2 fw-light text-light">blog</h5>
+            </div>
             <div class="d-flex justify-content-between align-items-center">
-                <h3 class="text-light">The recent news you must read it</h3>
+                <h1 class="text-light">The recent news you must read it</h1>
                 <button class="btn text-uppercase">view all</button>
             </div>
             <div class="row justify-content-between">
                 <div class="col-6 blog-info" v-for="(blog, indexBlog) in this.store.blogInfo">
                     <img :src="blog.image" :alt="blog.title">
-                    <div class="col-8 bg-light info-over">
+                    <div class="col-8 info-over">
                         <div class="d-flex">
                             <p>{{ blog.date }} - </p>
                             <p> by {{ blog.name }}</p>
                         </div>
-                        <h5>{{ blog.title }}</h5>
-                        <p>{{ blog.text }}</p>
+                        <h3>{{ blog.title }}</h3>
+                        <p class="text-dark fw-lighter fs-6">{{ blog.text }}</p>
                     </div>
                 </div>
             </div>
@@ -312,58 +314,84 @@ main {
                 color: white;
             }
         }
-
-        // .container-overlay {
-        //     .front {
-        //         display: block;
-        //         width: 300px;
-        //         height: auto;
-        //     }
-
-        //     .overlay {
-        //         img {
-        //             position: absolute;
-        //             top: 0;
-        //             bottom: 0;
-        //             left: 0;
-        //             right: 0;
-        //             height: 100%;
-        //             width: 100%;
-        //             opacity: 0;
-        //             transition: .6s ease;
-        //             z-index: 2;
-        //         }
-        //     }
-
-        //     &:hover .overlay img {
-        //         opacity: 1;
-        //     }
     }
 }
 
 #blog {
-    button {
-        background-color: $mainGreen;
-        padding: 20px 80px;
-        border-radius: 1px;
+    position: relative;
 
+    button {
+        position: absolute;
+        top: 20px;
+        right: 25px;
+        z-index: 1;
+        cursor: pointer;
+        font-weight: 300;
+        background-color: $mainGreen;
+        padding: 20px 60px;
+        border-radius: 1px;
+        transition: color 0.5s ease-in;
+
+        &:after {
+            content: '';
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%);
+            width: 0;
+            height: 100%;
+            background-color: $mainRed;
+            z-index: -1;
+            transition: width 0.3s ease-in;
+        }
+
+        &:hover {
+            color: $lightColor;
+            border-color: $mainRed ;
+
+            &:after {
+                width: 100%;
+            }
+        }
     }
 
     .blog-info {
         margin-bottom: 60px;
 
         img {
-            width: 685px;
+            width: 660px;
+            position: relative;
+            transition: 0.5s all ease-in-out;
         }
 
         .info-over {
             position: relative;
             top: -200px;
-            right: -230px;
+            right: -215px;
             font-size: 20px;
-
             padding: 40px 60px;
+            z-index: 2;
+            transition: 0.5s all ease-in-out;
+            transform: translateY(-40px);
+            background: $lightColor;
+
+            p {
+                color: $mainRed;
+            }
         }
+
+        &:hover .info-over {
+            transform: translateY(0px);
+            background: $mainGreen;
+        }
+
+        &:hover {
+            transform: translate3D(0, -1px, 0) scale(1.01);
+            transition: all .4s ease;
+            cursor: pointer;
+        }
+
     }
 }
 
@@ -374,7 +402,11 @@ main {
 
 }
 
-.small-line {
+.medium-line {
     width: 10%;
+}
+
+.small-line {
+    width: 3%;
 }
 </style>

@@ -60,7 +60,9 @@
                     <div class="col-4" v-for="(project, indexP) in this.store.projects">
                         <div class="project-card">
                             <div class="image-project">
-                                <img :src="project.image" :alt="project.content">
+                                <div class="bg-image">
+                                    <img :src="project.image" :alt="project.content">
+                                </div>
                                 <h5 class="text-center pt-4">{{ project.content }}</h5>
                             </div>
                             <div class="hidden-content">
@@ -234,10 +236,6 @@ main {
             background: $lightColor;
             cursor: pointer;
 
-            &:hover {
-                height: 400px;
-                box-shadow: 0 5px 20px red;
-            }
 
             .image-project {
                 position: relative;
@@ -246,19 +244,30 @@ main {
                 transform: translateY(-80px);
                 z-index: 5;
 
+                .bg-image {
+                    background-color: red;
+                    border-radius: 10px;
+
+                    img {
+                        width: 100%;
+                        border-radius: 10px;
+                        box-shadow: 0 5px 20px $blueHeader;
+                    }
+                }
+
                 h5 {
                     color: $blueHeader;
                 }
 
-                img {
-                    width: 100%;
-                    border-radius: 10px;
-                    box-shadow: 0 5px 20px $blueHeader;
+            }
 
-                    &:hover {
-                        opacity: 0.7;
-                    }
-                }
+            &:hover {
+                height: 400px;
+                box-shadow: 0 5px 20px $mainRed;
+            }
+
+            &:hover img {
+                opacity: 0.7;
             }
 
             .hidden-content {

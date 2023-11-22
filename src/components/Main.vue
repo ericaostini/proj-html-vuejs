@@ -1,15 +1,20 @@
 <template>
     <main>
         <section id="consultant">
-            <div class="container">
-                <h4>Our consultants can help you</h4>
+            <div class="d-flex align-items-center justify-content-between">
+                <h2>Our consultants can help you</h2>
                 <div class="border-green"></div>
             </div>
-            <div class="container">
+            <div class="info-consultant">
                 <div class="row justify-content-between">
                     <div class="col-6" v-for="(consultant, cIndex) in this.store.consultants">
-                        <h5>{{ consultant.title }}</h5>
-                        <p>{{ consultant.text }}</p>
+                        <div class="d-flex align-items-start p-4">
+                            <i :class="consultant.icon"></i>
+                            <div class="px-5">
+                                <h4>{{ consultant.title }}</h4>
+                                <p class="fw-light">{{ consultant.text }}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -102,85 +107,103 @@ export default {
 <style lang="scss" scoped>
 @use '../assets/style/partials/variables' as *;
 
-#consultant {
-    width: 95%;
-    float: right;
-    background-color: $lightColor;
+main {
+    #consultant {
+        width: 95%;
+        float: right;
+        background-color: $lightColor;
 
-    .border-green {
-        width: 4%;
-        height: 4px;
-        border: 2px solid $mainGreen;
-    }
-}
+        h2 {
+            padding: 100px;
+        }
 
-#about-us {
-    float: left;
+        .border-green {
+            width: 50%;
+            height: 4px;
+            border: 2px solid $mainGreen;
+        }
 
-    img {
-        width: 100%;
-        height: 550px;
-        object-fit: cover;
-        object-position: top;
-    }
+        .info-consultant {
+            padding: 0px 100px 100px;
 
-    .get-started {
-        position: relative;
-        background-color: $mainGreen;
-        padding: 100px;
-        margin-bottom: 160px;
-
-        button {
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            background-color: $mainRed;
-            padding: 20px 80px;
-            border-radius: 1px;
+            i {
+                font-size: 35px;
+                background-color: $mainRed;
+                padding: 15px;
+                border-radius: 50px;
+                color: $lightColor;
+            }
         }
     }
 
-}
-
-#project {
-    padding: 20px;
-    margin-bottom: 140px;
-
-    img {
-        width: 450px;
-    }
-}
-
-#testimonial {
-    margin-bottom: 160px;
-
-    h3 {
-        text-align: end;
-    }
-}
-
-#blog {
-    button {
-        background-color: $mainGreen;
-        padding: 20px 80px;
-        border-radius: 1px;
-
-    }
-
-    .blog-info {
-        margin-bottom: 60px;
+    #about-us {
+        float: left;
 
         img {
-            width: 685px;
+            width: 100%;
+            height: 550px;
+            object-fit: cover;
+            object-position: top;
         }
 
-        .info-over {
+        .get-started {
             position: relative;
-            top: -200px;
-            right: -230px;
-            font-size: 20px;
+            background-color: $mainGreen;
+            padding: 100px;
+            margin-bottom: 160px;
 
-            padding: 40px 60px;
+            button {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                background-color: $mainRed;
+                padding: 20px 80px;
+                border-radius: 1px;
+            }
+        }
+
+    }
+
+    #project {
+        padding: 20px;
+        margin-bottom: 140px;
+
+        img {
+            width: 450px;
+        }
+    }
+
+    #testimonial {
+        margin-bottom: 160px;
+
+        h3 {
+            text-align: end;
+        }
+    }
+
+    #blog {
+        button {
+            background-color: $mainGreen;
+            padding: 20px 80px;
+            border-radius: 1px;
+
+        }
+
+        .blog-info {
+            margin-bottom: 60px;
+
+            img {
+                width: 685px;
+            }
+
+            .info-over {
+                position: relative;
+                top: -200px;
+                right: -230px;
+                font-size: 20px;
+
+                padding: 40px 60px;
+            }
         }
     }
 }

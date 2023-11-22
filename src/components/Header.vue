@@ -52,7 +52,7 @@ export default {
 
 header {
     position: relative;
-    height: 1000px;
+    height: 900px;
     width: 100%;
     background-color: $blueHeader;
 
@@ -65,6 +65,7 @@ header {
 
         .logo {
             background-color: $blueHeader;
+            padding-top: 20px;
 
             img {
                 width: auto;

@@ -30,19 +30,23 @@ export const store = reactive({
     consultants: [
         {
             title: 'STATISTICAL CONSULTING',
-            text: 'Our statistical consulting team can provide the statistics you need to answer your research questions, with customized statistical consulting and analysis'
+            text: 'Our statistical consulting team can provide the statistics you need to answer your research questions, with customized statistical consulting and analysis',
+            icon: 'fa-solid fa-chart-line'
         },
         {
             title: 'DIGITAL CONSULTING',
-            text: 'Our digital consulting team can help you deliver purpose-built application modernization that simplifies technology management and reduces costs by embedding and operationalizing emerging technologies into your core business processes and platform strategies.'
+            text: 'Our digital consulting team can help you deliver purpose-built application modernization that simplifies technology management and reduces costs by embedding and operationalizing emerging technologies into your core business processes and platform strategies.',
+            icon: 'fa-solid fa-bullhorn'
         },
         {
             title: 'BANKING CONSULTING',
-            text: 'Our financial services consulting teams offer strategic thinking, transformative expertise, and technical know-how. We draw on deep financial sector relationships and inter-disciplinary knowledge across multiple industries, capturing best practices that cut across global markets.'
+            text: 'Our financial services consulting teams offer strategic thinking, transformative expertise, and technical know-how. We draw on deep financial sector relationships and inter-disciplinary knowledge across multiple industries, capturing best practices that cut across global markets.',
+            icon: 'fa-solid fa-wallet'
         },
         {
             title: 'ENTERPRISE CONSULTING',
-            text: 'Our enterprise consulting teams assisting companies in their growth by proposing optimized business strategies and or processes specialized to the needs of the organization at hand. Successful consulting allows organizations to run like a well-oiled machine by highlighting and improving any previously unnoticed organizational shortcomings or risks.'
+            text: 'Our enterprise consulting teams assisting companies in their growth by proposing optimized business strategies and or processes specialized to the needs of the organization at hand. Successful consulting allows organizations to run like a well-oiled machine by highlighting and improving any previously unnoticed organizational shortcomings or risks.',
+            icon: 'fa-solid fa-bullseye'
         }
     ],
     projects: [

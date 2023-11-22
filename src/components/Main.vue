@@ -75,7 +75,7 @@
             <h5 class="text-light text-center fw-light text-uppercase">testimonial</h5>
             <h1 class="text-light p-4">What's the customer say about our work</h1>
             <div class="row ms-4">
-                <div class="col-4 bg-light g-1" v-for="(opinion, indexOp) in this.store.opinions">
+                <div class="col-4 bg-light g-0" v-for="(opinion, indexOp) in this.store.opinions">
                     <div class="container-overlay">
                         <div class="front p-5">
                             <p class="fw-light">{{ opinion.text }}</p>
@@ -290,10 +290,13 @@ main {
                 top: 0;
                 left: 0;
                 color: black;
-                transition: .6s ease;
+                transition: .3s ease;
+                z-index: 10;
             }
 
             .overlay {
+                color: white;
+
                 img {
                     width: 100%;
                     opacity: 0;
@@ -303,10 +306,10 @@ main {
 
             &:hover .overlay img {
                 opacity: 1;
+            }
 
-                &::after {
-                    color: white;
-                }
+            &:hover .front {
+                color: white;
             }
         }
 

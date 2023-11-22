@@ -72,13 +72,20 @@
             </div>
         </section>
         <section id="testimonial">
-            <h4 class="text-light text-center">testimonial</h4>
-            <h3 class="text-light pe-3">What's the customer say about our work</h3>
+            <h5 class="text-light text-center fw-light text-uppercase">testimonial</h5>
+            <h1 class="text-light p-4">What's the customer say about our work</h1>
             <div class="row ms-4">
-                <div class="col-4 bg-light p-5" v-for="(opinion, indexOp) in this.store.opinions">
-                    <p>{{ opinion.text }}</p>
-                    <h5>{{ opinion.name }}</h5>
-                    <p>{{ opinion.company }}</p>
+                <div class="col-4 bg-light g-1" v-for="(opinion, indexOp) in this.store.opinions">
+                    <div class="container-overlay">
+                        <div class="front p-5">
+                            <p class="fw-light">{{ opinion.text }}</p>
+                            <h4 class="pt-5">{{ opinion.name }}</h4>
+                            <p>{{ opinion.company }}</p>
+                        </div>
+                        <div class="overlay">
+                            <img :src="opinion.image" :alt="opinion.name">
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -210,7 +217,7 @@ main {
     }
 
     #project {
-        margin-bottom: 140px;
+        margin-bottom: 180px;
         position: relative;
 
         .project-card {
@@ -271,34 +278,88 @@ main {
     #testimonial {
         margin-bottom: 160px;
 
-        h3 {
+        h1 {
             text-align: end;
         }
-    }
 
-    #blog {
-        button {
-            background-color: $mainGreen;
-            padding: 20px 80px;
-            border-radius: 1px;
+        .container-overlay {
+            position: relative;
 
+            .front {
+                position: absolute;
+                top: 0;
+                left: 0;
+                color: black;
+                transition: .6s ease;
+            }
+
+            .overlay {
+                img {
+                    width: 100%;
+                    opacity: 0;
+                    transition: all .6s ease;
+                }
+            }
+
+            &:hover .overlay img {
+                opacity: 1;
+
+                &::after {
+                    color: white;
+                }
+            }
         }
 
-        .blog-info {
-            margin-bottom: 60px;
+        // .container-overlay {
+        //     .front {
+        //         display: block;
+        //         width: 300px;
+        //         height: auto;
+        //     }
 
-            img {
-                width: 685px;
-            }
+        //     .overlay {
+        //         img {
+        //             position: absolute;
+        //             top: 0;
+        //             bottom: 0;
+        //             left: 0;
+        //             right: 0;
+        //             height: 100%;
+        //             width: 100%;
+        //             opacity: 0;
+        //             transition: .6s ease;
+        //             z-index: 2;
+        //         }
+        //     }
 
-            .info-over {
-                position: relative;
-                top: -200px;
-                right: -230px;
-                font-size: 20px;
+        //     &:hover .overlay img {
+        //         opacity: 1;
+        //     }
+    }
+}
 
-                padding: 40px 60px;
-            }
+#blog {
+    button {
+        background-color: $mainGreen;
+        padding: 20px 80px;
+        border-radius: 1px;
+
+    }
+
+    .blog-info {
+        margin-bottom: 60px;
+
+        img {
+            width: 685px;
+        }
+
+        .info-over {
+            position: relative;
+            top: -200px;
+            right: -230px;
+            font-size: 20px;
+
+            padding: 40px 60px;
         }
     }
 }

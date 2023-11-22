@@ -1,20 +1,25 @@
 <template>
     <header>
-        <div class="px-4">
-            <div class="row align-items-center justify-content-between">
-                <div class="col-lg-2 col-md-4 col-sm-3 logo">
-                    <img :src="'/images/logotype.png'" alt="logo Phlox">
-                </div>
-                <div class="col-lg-10 col-md-7 col-sm-9">
-                    <ul class="nav d-flex justify-content-end">
-                        <li class="nav-item d-flex" v-for="(item, navIndex) in this.store.navBar">
-                            <a class="nav-link pt-4 mx-2 text-light" aria-current="page" href="#"
-                                :class="{ 'border-active': item.active === true }">{{
-                                    item.navItem }}</a>
-                        </li>
-                    </ul>
+        <div class="nav-position">
+            <div class="px-4">
+                <div class="row align-items-center justify-content-between">
+                    <div class="col-lg-2 col-md-4 col-sm-3 logo">
+                        <img :src="'/images/logotype.png'" alt="logo Phlox">
+                    </div>
+                    <div class="col-lg-10 col-md-7 col-sm-9">
+                        <ul class="nav d-flex justify-content-end">
+                            <li class="nav-item d-flex" v-for="(item, navIndex) in this.store.navBar">
+                                <a class="nav-link pt-4 mx-2 text-light" aria-current="page" href="#"
+                                    :class="item.active === true ? 'border-active' : 'hover-effect'">{{
+                                        item.navItem }}</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
+        </div>
+        <div class="image">
+            <img :src="'/images/portrait-of-young-architect-woman-on-meeting-KFZCE3A.jpg'">
         </div>
         <div class="text-light text-uppercase title-header container">
             <div class="d-flex align-items-center px-3">
@@ -47,25 +52,44 @@ export default {
 
 header {
     position: relative;
-    background-image: url('../assets/images/portrait-of-young-architect-woman-on-meeting-KFZCE3A.jpg');
-    background-position: right;
-    background-size: 1100px 1000px;
-    background-repeat: no-repeat;
     height: 1000px;
     width: 100%;
     background-color: $blueHeader;
 
-    .logo {
-        background-color: $blueHeader;
+    .nav-position {
+        position: absolute;
+        top: 0;
+        z-index: 10;
+        right: 0;
+        left: 0;
 
-        img {
-            width: auto;
-            height: 20px;
+        .logo {
+            background-color: $blueHeader;
+
+            img {
+                width: auto;
+                height: 20px;
+            }
         }
+
+    }
+
+    .image {
+        img {
+            object-fit: cover;
+            width: 1000px;
+            height: 900px;
+            z-index: 1;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
     }
 
     .title-header {
         position: absolute;
+        z-index: 20;
         top: 300px;
         width: 45%;
 
@@ -96,6 +120,32 @@ header {
 
 
 .border-active {
-    border-top: 3px solid $lightColor;
+    text-decoration: underline 2px $lightColor;
+}
+
+.hover-effect {
+    font-weight: 100;
+    position: relative;
+
+    &:hover,
+    &:focus,
+    &:active {
+        cursor: pointer;
+
+        &:after {
+            width: 100%;
+        }
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 3px;
+        background-color: $lightColor;
+        width: 0;
+        transition: width .8s;
+    }
 }
 </style>

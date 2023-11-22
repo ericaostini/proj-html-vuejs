@@ -28,7 +28,7 @@
             </div>
             <h1 class="px-3">The best business consulting</h1>
             <div class="px-3 d-flex align-items-center pt-5">
-                <button class="btn text-uppercase">read more</button>
+                <button class="btn text-uppercase btn-hover">read more</button>
                 <i class="fa-regular fa-circle-play p-3"></i>
             </div>
         </div>
@@ -94,8 +94,7 @@ header {
         width: 45%;
 
         .border-green {
-            width: 4%;
-            height: 4px;
+            width: 8%;
             border: 2px solid $mainGreen;
         }
 
@@ -105,10 +104,43 @@ header {
         }
 
         button {
-            background-color: $mainGreen;
-            width: 40%;
-            padding: 28px;
+            position: relative;
+            z-index: 1;
+            background-color: #39FFBF;
             border-radius: 1px;
+            color: $blueHeader;
+            cursor: pointer;
+            display: flex;
+            align-self: center;
+            font-size: 1rem;
+            padding: 20px 60px;
+            text-align: center;
+            font-weight: 300;
+            transition: color 0.5s ease-in;
+
+            &:after {
+                content: '';
+                position: absolute;
+                display: block;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 0;
+                height: 100%;
+                background: red;
+                z-index: -1;
+                transition: width 0.3s ease-in;
+            }
+
+            &:hover {
+                color: #fff;
+                border-color: red;
+
+                &:after {
+                    width: 100%;
+                }
+            }
+
         }
 
         i {
@@ -148,4 +180,37 @@ header {
         transition: width .8s;
     }
 }
+
+// .fifth {
+//     border-color: $purple;
+//     // border: 0;
+//     border-radius: 0;
+//     color: $purple;
+//     position: relative;
+//     overflow: hidden;
+//     z-index: 1;
+//     transition: color 150ms ease-in-out;
+
+//     &:after {
+//         content: '';
+//         position: absolute;
+//         display: block;
+//         top: 0;
+//         left: 50%;
+//         transform: translateX(-50%);
+//         width: 0;
+//         height: 100%;
+//         background: $purple;
+//         z-index: -1;
+//         transition: width 150ms ease-in-out;
+//     }
+
+//     &:hover {
+//         color: #fff;
+
+//         &:after {
+//             width: 110%;
+//         }
+//     }
+// }
 </style>

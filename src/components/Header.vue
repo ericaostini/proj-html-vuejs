@@ -7,9 +7,9 @@
                         <img :src="'/images/logotype.png'" alt="logo Phlox">
                     </div>
                     <div class="col-lg-10 col-md-7 col-sm-9">
-                        <ul class="nav d-flex justify-content-end">
+                        <ul class="nav d-flex justify-content-end ">
                             <li class="nav-item d-flex" v-for="(item, navIndex) in this.store.navBar">
-                                <a class="nav-link pt-4 mx-2 text-light" aria-current="page" href="#"
+                                <a class="nav-link pt-4 mx-2 text-light" href="#"
                                     :class="item.active === true ? 'border-active' : 'hover-effect'">{{
                                         item.navItem }}</a>
                             </li>
@@ -53,7 +53,6 @@ export default {
 header {
     position: relative;
     height: 900px;
-    width: 100%;
     background-color: $blueHeader;
 
     .nav-position {
@@ -78,12 +77,13 @@ header {
     .image {
         img {
             object-fit: cover;
-            width: 1000px;
+            width: 75%;
             height: 900px;
             z-index: 1;
             position: absolute;
             top: 0;
             right: 0;
+            bottom: 0;
         }
 
     }

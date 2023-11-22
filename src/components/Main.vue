@@ -53,12 +53,21 @@
             </div>
         </section>
         <section id="project">
-            <h4 class="text-light">project</h4>
-            <div class="border-green"></div>
-            <h3 class="text-light">Our expert trusted consultants help clients</h3>
-            <div class="row">
-                <div class="col-4" v-for="(project, indexP) in this.store.projects">
-                    <img :src="project.image" :alt="project.content">
+            <div class="container">
+                <div class="text-light text-uppercase fw-light">Project</div>
+                <h1 class="text-light text-uppercase pb-4">Our expert trusted consultants help clients</h1>
+                <div class="row justify-content-between">
+                    <div class="col-4" v-for="(project, indexP) in this.store.projects">
+                        <div class="project-card">
+                            <div class="image-project">
+                                <img :src="project.image" :alt="project.content">
+                                <h5 class="text-center pt-4">{{ project.content }}</h5>
+                            </div>
+                            <div class="hidden-content">
+                                <h5>{{ project.content }}</h5>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -201,11 +210,61 @@ main {
     }
 
     #project {
-        padding: 20px;
         margin-bottom: 140px;
+        position: relative;
 
-        img {
-            width: 450px;
+        .project-card {
+            margin-top: 50px;
+            position: relative;
+            width: 400px;
+            height: 300px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px $blueHeader;
+            transition: 0.3s;
+            padding: 50px 50px;
+            background: $lightColor;
+            cursor: pointer;
+
+            &:hover {
+                height: 400px;
+                box-shadow: 0 5px 20px red;
+            }
+
+            .image-project {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                transform: translateY(-80px);
+                z-index: 5;
+
+                h5 {
+                    color: $blueHeader;
+                }
+
+                img {
+                    width: 100%;
+                    border-radius: 10px;
+                    box-shadow: 0 5px 20px $blueHeader;
+
+                    &:hover {
+                        opacity: 0.7;
+                    }
+                }
+            }
+
+            .hidden-content {
+                padding: 180px 50px;
+                text-align: center;
+                transform: translateY(-300px);
+                opacity: 0;
+                transition: 0.3s;
+                word-wrap: wrap;
+            }
+
+            &:hover>.hidden-content {
+                opacity: 1;
+                transform: translateY(-230px);
+            }
         }
     }
 

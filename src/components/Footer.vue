@@ -113,11 +113,19 @@ export default {
 
         a {
             color: $textGrey;
+
+            &:hover {
+                color: $mainRed;
+            }
         }
 
         i {
             color: $lightColor;
             padding-left: 20px;
+
+            &:hover {
+                color: $mainRed;
+            }
 
         }
     }

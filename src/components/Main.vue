@@ -357,7 +357,6 @@ main {
     }
 
     .blog-info {
-        margin-bottom: 60px;
 
         img {
             width: 660px;

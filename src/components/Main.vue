@@ -25,10 +25,14 @@
                     <img :src="'/images/business-people-working-together-on-project-and-5FHSKBL.jpg'" alt="">
                 </div>
                 <div class="col-4 text-light p-5">
-                    <h4>about us</h4>
-                    <div class="border-green"></div>
-                    <h2 class="text-light">We make your strategy work</h2>
-                    <p class="text-light">We constantly collect and analyze data from your reference scenario to arrive at
+                    <div class="d-flex align-items-center">
+                        <div class="border-green small-line"></div>
+                        <h6 class="mx-3 text-uppercase pt-2 fw-light">about us</h6>
+                    </div>
+                    <h1 class="text-light fw-bold">We make your strategy work</h1>
+                    <p class="text-light fw-lighter pt-4">We constantly collect and analyze data from your reference
+                        scenario to
+                        arrive at
                         accurate decisions that
                         allow you to make the most of market opportunities. To grow you need a strategy, which combines
                         experience, data analysis, gradual definition of objectives. We study your business and design the
@@ -37,9 +41,10 @@
                 </div>
             </div>
             <div class="get-started me-4">
-                <div class="d-flex align-items-center justify-content-around">
-                    <h3 class="w-25">We help to deliver the business case</h3>
-                    <p class="w-50">We find that success comes from employing an “inside company” approach to help us better
+                <div class="d-flex align-items-center justify-content-evenly">
+                    <h2 class="w-25">We help to deliver the business case</h2>
+                    <p class="fw-light">We find that success comes from employing an “inside company” approach to help
+                        us better
                         understand the
                         internal dynamics and factors that are as critical to a positive outcome as the external conditions.
                     </p>
@@ -117,12 +122,6 @@ main {
             padding: 100px;
         }
 
-        .border-green {
-            width: 50%;
-            height: 4px;
-            border: 2px solid $mainGreen;
-        }
-
         .info-consultant {
             padding: 0px 100px 100px;
 
@@ -146,19 +145,56 @@ main {
             object-position: top;
         }
 
+        h1 {
+            font-size: 60px;
+            line-height: 60px;
+        }
+
         .get-started {
             position: relative;
             background-color: $mainGreen;
+            color: $blueHeader;
             padding: 100px;
             margin-bottom: 160px;
+
+            p {
+                width: 35%;
+            }
 
             button {
                 position: absolute;
                 bottom: 0;
                 right: 0;
+                z-index: 1;
+                cursor: pointer;
+                font-weight: 300;
                 background-color: $mainRed;
-                padding: 20px 80px;
+                padding: 20px 60px;
                 border-radius: 1px;
+                transition: color 0.5s ease-in;
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    display: block;
+                    top: 0;
+                    left: 50%;
+                    transform: translate(-50%);
+                    width: 0;
+                    height: 100%;
+                    background-color: $blueHeader;
+                    z-index: -1;
+                    transition: width 0.3s ease-in;
+                }
+
+                &:hover {
+                    color: $lightColor;
+                    border-color: $blueHeader ;
+
+                    &:after {
+                        width: 100%;
+                    }
+                }
             }
         }
 
@@ -206,5 +242,16 @@ main {
             }
         }
     }
+}
+
+.border-green {
+    width: 50%;
+    height: 4px;
+    border: 2px solid $mainGreen;
+
+}
+
+.small-line {
+    width: 10%;
 }
 </style>

@@ -3,6 +3,7 @@
   <Main />
   <Footer />
   <button class="btn btn-light"><i class="fa-regular fa-comment"></i></button>
+  <Chat />
 </template>
 
 <script>
@@ -10,6 +11,7 @@ import { store } from './components/data/store';
 import Header from './components/Header.vue';
 import Main from './components/Main.vue';
 import Footer from './components/Footer.vue';
+import Chat from './components/Chat.vue';
 export default {
   name: "App",
   data() {
@@ -17,7 +19,10 @@ export default {
       store
     };
   },
-  components: { Header, Main, Footer }
+  methods: {
+
+  },
+  components: { Header, Main, Footer, Chat }
 }
 </script>
 

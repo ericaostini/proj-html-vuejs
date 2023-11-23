@@ -4,7 +4,7 @@
         <p class="text-light fw-light">A wonderful serenity has taken possession Far far away, behind the word
             mountains.
         </p>
-        <div class="button-effect">
+        <div class="button-effect align">
             <button class="btn text-uppercase">Get started</button>
         </div>
     </section>
@@ -67,7 +67,9 @@ export default {
 
     button {
         position: absolute;
-        right: 43%;
+        top: 75%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         z-index: 1;
         cursor: pointer;
         background-color: $blueHeader;

@@ -7,7 +7,7 @@
             </div>
             <div class="info-consultant">
                 <div class="row justify-content-between">
-                    <div class="col-6" v-for="(consultant, cIndex) in this.store.consultants">
+                    <div class="col-lg-6" v-for="(consultant, cIndex) in this.store.consultants">
                         <div class="d-flex align-items-start p-4">
                             <i :class="consultant.icon"></i>
                             <div class="px-5">
@@ -21,10 +21,10 @@
         </section>
         <section id="about-us">
             <div class="row">
-                <div class="col-8">
+                <div class="col-lg-8 col-md-6">
                     <img :src="'/images/business-people-working-together-on-project-and-5FHSKBL.jpg'" alt="">
                 </div>
-                <div class="col-4 text-light p-5">
+                <div class="col-lg-4 col-md-6 text-light p-5">
                     <div class="d-flex align-items-center">
                         <div class="border-green medium-line"></div>
                         <h6 class="mx-3 pt-2">about us</h6>
@@ -40,7 +40,7 @@
                         strategy for you.</p>
                 </div>
             </div>
-            <div class="get-started me-4">
+            <div class="get-started">
                 <div class="d-flex align-items-center justify-content-evenly">
                     <h2>We help to deliver the business case</h2>
                     <p class="fw-light">We find that success comes from employing an “inside company” approach to help
@@ -58,7 +58,7 @@
                 <h1 class="text-light text-uppercase pb-4">Our expert trusted consultants help clients</h1>
                 <div class="container">
                     <div class="row justify-content-between">
-                        <div class="col-lg-4 col-md-6 px-3" v-for="(project, indexP) in this.store.projects">
+                        <div class="col-lg-4 col-md-6 px-3 " v-for="(project, indexP) in this.store.projects">
                             <div class="project-card">
                                 <div class="image-project">
                                     <div class="bg-image">
@@ -79,8 +79,8 @@
             <h5 class="text-light text-center text-uppercase">testimonial</h5>
             <h1 class="text-light p-5">What's the customer say about our work</h1>
             <div class="container">
-                <div class="row">
-                    <div class="col-4 bg-light g-0" v-for="(opinion, indexOp) in this.store.opinions">
+                <div class="row justify-content-md-center ">
+                    <div class="col-lg-4 col-md-8 bg-light g-0" v-for="(opinion, indexOp) in this.store.opinions">
                         <div class="container-overlay">
                             <div class="front p-5">
                                 <p class="fw-light">{{ opinion.text }}</p>
@@ -106,9 +106,9 @@
                     <button class="btn text-uppercase">view all</button>
                 </div>
                 <div class="row justify-content-between">
-                    <div class="col-6 blog-info" v-for="(blog, indexBlog) in this.store.blogInfo">
+                    <div class="col-lg-6 col-md-8 blog-info" v-for="(blog, indexBlog) in this.store.blogInfo">
                         <img :src="blog.image" :alt="blog.title">
-                        <div class="col-8 info-over">
+                        <div class="col-lg-8 col-md-10 info-over">
                             <div class="d-flex">
                                 <p>{{ blog.date }} - </p>
                                 <p> by {{ blog.name }}</p>
@@ -171,6 +171,7 @@ main {
 
     #about-us {
         float: left;
+        width: 90%;
 
         h6 {
             font-weight: $fontMild;
@@ -193,63 +194,63 @@ main {
             font-family: $titleFont;
             text-transform: uppercase;
         }
+    }
 
-        .get-started {
-            position: relative;
-            background-color: $mainGreen;
-            color: $blueHeader;
-            padding: 90px;
-            margin-bottom: 160px;
+    .get-started {
+        float: right;
+        position: relative;
+        background-color: $mainGreen;
+        color: $blueHeader;
+        padding: 90px;
+        margin-bottom: 160px;
 
-            h2 {
-                font-family: $titleFont;
-                width: 35%;
-                font-size: 35px;
-                text-transform: uppercase;
-                letter-spacing: $lessSpace;
-            }
+        h2 {
+            font-family: $titleFont;
+            width: 35%;
+            font-size: 35px;
+            text-transform: uppercase;
+            letter-spacing: $lessSpace;
+        }
 
-            p {
-                width: 35%;
-            }
+        p {
+            width: 35%;
+        }
 
-            button {
+        button {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: 1;
+            cursor: pointer;
+            font-weight: 300;
+            background-color: $mainRed;
+            padding: 20px 60px;
+            border-radius: 1px;
+            transition: color 0.5s ease-in;
+
+            &:after {
+                content: '';
                 position: absolute;
-                bottom: 0;
-                right: 0;
-                z-index: 1;
-                cursor: pointer;
-                font-weight: 300;
-                background-color: $mainRed;
-                padding: 20px 60px;
-                border-radius: 1px;
-                transition: color 0.5s ease-in;
+                display: block;
+                top: 0;
+                left: 50%;
+                transform: translate(-50%);
+                width: 0;
+                height: 100%;
+                background-color: $blueHeader;
+                z-index: -1;
+                transition: width 0.3s ease-in;
+            }
+
+            &:hover {
+                color: $lightColor;
+                border-color: $blueHeader ;
 
                 &:after {
-                    content: '';
-                    position: absolute;
-                    display: block;
-                    top: 0;
-                    left: 50%;
-                    transform: translate(-50%);
-                    width: 0;
-                    height: 100%;
-                    background-color: $blueHeader;
-                    z-index: -1;
-                    transition: width 0.3s ease-in;
-                }
-
-                &:hover {
-                    color: $lightColor;
-                    border-color: $blueHeader ;
-
-                    &:after {
-                        width: 100%;
-                    }
+                    width: 100%;
                 }
             }
         }
-
     }
 
     #project {

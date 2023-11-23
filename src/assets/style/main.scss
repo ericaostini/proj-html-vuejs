@@ -9,6 +9,10 @@ $fa-font-path: '../webfonts';
 
 @import url('https://fonts.googleapis.com/css2?family=Cantarell:wght@700&family=Raleway:wght@100;200;500;800&display=swap');
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -16,4 +20,5 @@ body {
     background-color: $blueHeader;
     overflow-x: hidden;
     font-family: $mainFont;
+    width: 100%;
 }

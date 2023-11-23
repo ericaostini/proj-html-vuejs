@@ -1,6 +1,7 @@
 <template>
-    <button class="btn btn-light"><i class="fa-regular fa-comment" @click="showChat()"></i></button>
-    <div id="chat" class="bg-light" :class="show ? 'hidden' : 'show'">
+    <button class="btn btn-light"><i :class="show ? 'fa-solid fa-x' : 'fa-regular fa-comment'"
+            @click="showChat()"></i></button>
+    <div id="chat" class="bg-light" :class="show ? 'show' : 'hidden'">
         <div class="top-chat">
             <div class="d-flex justify-content-center">
                 <p class="m-2"><i class="fa-regular fa-message m-1"></i>Ask</p>
@@ -57,13 +58,13 @@ button {
     bottom: 30px;
     right: 30px;
     z-index: 100;
-    padding: 12px 15px;
+    padding: 10px 15px;
     background-color: $chatColor;
     border-radius: 50px;
     border-color: $chatColor;
 
     i {
-        font-size: 30px;
+        font-size: 25px;
         color: $lightColor;
     }
 

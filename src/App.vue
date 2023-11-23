@@ -3,7 +3,7 @@
   <Main />
   <Footer />
   <Chat />
-  <button class="btn btn-light" @click="scrollTop()"><i class="fa-solid fa-arrow-up"></i></button>
+  <button class="btn btn-light" @click="scrollTop()" id="myBtn"><i class="fa-solid fa-arrow-up"></i></button>
 </template>
 
 <script>
@@ -23,8 +23,7 @@ export default {
     scrollTop() {
       document.body.scrollTop = 0;
       document.documentElement.scrollTop = 0;
-    }
-
+    },
   },
   components: { Header, Main, Footer, Chat }
 }
@@ -38,5 +37,17 @@ button {
   bottom: 30px;
   right: 120px;
   z-index: 99;
+  padding: 10px 15px;
+  border-radius: 50px;
+  border-color: $chatColor;
+
+  i {
+    font-size: 25px;
+    color: $chatColor;
+  }
+
+  &:hover i {
+    color: black;
+  }
 }
 </style>

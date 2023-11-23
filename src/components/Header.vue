@@ -99,6 +99,12 @@ header {
             border: 2px solid $mainGreen;
         }
 
+        h5 {
+            font-weight: $fontMild;
+            font-size: 18px;
+            letter-spacing: 5px;
+        }
+
         h1 {
             font-size: 100px;
             line-height: 80px;
@@ -182,37 +188,4 @@ header {
         transition: width .8s;
     }
 }
-
-// .fifth {
-//     border-color: $purple;
-//     // border: 0;
-//     border-radius: 0;
-//     color: $purple;
-//     position: relative;
-//     overflow: hidden;
-//     z-index: 1;
-//     transition: color 150ms ease-in-out;
-
-//     &:after {
-//         content: '';
-//         position: absolute;
-//         display: block;
-//         top: 0;
-//         left: 50%;
-//         transform: translateX(-50%);
-//         width: 0;
-//         height: 100%;
-//         background: $purple;
-//         z-index: -1;
-//         transition: width 150ms ease-in-out;
-//     }
-
-//     &:hover {
-//         color: #fff;
-
-//         &:after {
-//             width: 110%;
-//         }
-//     }
-// }
 </style>

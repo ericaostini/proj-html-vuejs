@@ -27,10 +27,10 @@
                 <div class="col-4 text-light p-5">
                     <div class="d-flex align-items-center">
                         <div class="border-green medium-line"></div>
-                        <h6 class="mx-3 text-uppercase pt-2 fw-light">about us</h6>
+                        <h6 class="mx-3 pt-2">about us</h6>
                     </div>
                     <h1 class="text-light fw-bold">We make your strategy work</h1>
-                    <p class="text-light fw-lighter pt-4">We constantly collect and analyze data from your reference
+                    <p class="text-light fw-light pt-4">We constantly collect and analyze data from your reference
                         scenario to
                         arrive at
                         accurate decisions that
@@ -67,7 +67,7 @@
                                     <h5 class="text-center pt-4">{{ project.content }}</h5>
                                 </div>
                                 <div class="hidden-content">
-                                    <h5>{{ project.content }}</h5>
+                                    <p>{{ project.content }}</p>
                                 </div>
                             </div>
                         </div>
@@ -76,7 +76,7 @@
             </div>
         </section>
         <section id="testimonial">
-            <h5 class="text-light text-center fw-light text-uppercase">testimonial</h5>
+            <h5 class="text-light text-center text-uppercase">testimonial</h5>
             <h1 class="text-light p-5">What's the customer say about our work</h1>
             <div class="container">
                 <div class="row">
@@ -85,7 +85,7 @@
                             <div class="front p-5">
                                 <p class="fw-light">{{ opinion.text }}</p>
                                 <h4 class="pt-5">{{ opinion.name }}</h4>
-                                <p>{{ opinion.company }}</p>
+                                <p class="fw-light">{{ opinion.company }}</p>
                             </div>
                             <div class="overlay">
                                 <img :src="opinion.image" :alt="opinion.name">
@@ -99,7 +99,7 @@
             <div class="container">
                 <div class="d-flex align-items-center">
                     <div class="border-green small-line"></div>
-                    <h5 class="mx-3 text-uppercase pt-2 fw-light text-light">blog</h5>
+                    <h5 class="mx-3 text-uppercase pt-2 text-light">blog</h5>
                 </div>
                 <div class="d-flex justify-content-between align-items-center">
                     <h1 class="text-light">The recent news you must read it</h1>
@@ -148,6 +148,7 @@ main {
             padding: 100px;
             font-size: 30px;
             font-family: $titleFont;
+            letter-spacing: $lessSpace;
         }
 
         .info-consultant {
@@ -163,6 +164,7 @@ main {
 
             h4 {
                 font-family: $titleFont;
+                letter-spacing: $lessSpace;
             }
         }
     }
@@ -170,17 +172,26 @@ main {
     #about-us {
         float: left;
 
+        h6 {
+            font-weight: $fontMild;
+            font-size: $fontSmall;
+            letter-spacing: $spaceLetter;
+            text-transform: uppercase;
+        }
+
         img {
             width: 100%;
-            height: 550px;
+            height: 600px;
             object-fit: cover;
             object-position: top;
         }
 
         h1 {
+            padding-top: 20px;
             font-size: 60px;
             line-height: 50px;
             font-family: $titleFont;
+            text-transform: uppercase;
         }
 
         .get-started {
@@ -193,7 +204,9 @@ main {
             h2 {
                 font-family: $titleFont;
                 width: 35%;
-                font-size: 40px;
+                font-size: 35px;
+                text-transform: uppercase;
+                letter-spacing: $lessSpace;
             }
 
             p {
@@ -244,6 +257,7 @@ main {
         position: relative;
 
         h6 {
+            font-family: $titleFont;
             color: #fff;
             font-size: 25px;
             text-transform: uppercase;
@@ -266,6 +280,7 @@ main {
         h1 {
             font-family: $titleFont;
             width: 65%;
+            letter-spacing: $lessSpace;
         }
 
         .project-card {
@@ -289,7 +304,7 @@ main {
                 z-index: 5;
 
                 .bg-image {
-                    background-color: red;
+                    background-color: $mainRed;
                     border-radius: 10px;
 
                     img {
@@ -321,6 +336,7 @@ main {
                 opacity: 0;
                 transition: 0.3s;
                 word-wrap: wrap;
+                font-weight: $fontMild;
             }
 
             &:hover>.hidden-content {
@@ -335,12 +351,15 @@ main {
 
         h5 {
             text-decoration: underline 3px $mainRed;
+            font-weight: $fontMild;
+            letter-spacing: $spaceLetter;
         }
 
         h1 {
             text-align: end;
             font-family: $titleFont;
             text-transform: uppercase;
+            letter-spacing: $lessSpace;
         }
 
         .container-overlay {
@@ -378,6 +397,12 @@ main {
 
 #blog {
     position: relative;
+
+    h5 {
+        font-weight: $fontMild;
+        letter-spacing: $spaceLetter;
+        font-size: $fontSmall;
+    }
 
     button {
         position: absolute;
@@ -419,6 +444,7 @@ main {
         font-family: $titleFont;
         text-transform: uppercase;
         margin-bottom: 50px;
+        letter-spacing: $lessSpace;
     }
 
     .blog-info {
@@ -432,7 +458,7 @@ main {
         .info-over {
             position: relative;
             top: -200px;
-            right: -180px;
+            right: -210px;
             font-size: 20px;
             padding: 40px 60px;
             z-index: 2;
@@ -460,7 +486,7 @@ main {
 }
 
 .border-green {
-    width: 40%;
+    width: 45%;
     height: 4px;
     border: 2px solid $mainGreen;
 

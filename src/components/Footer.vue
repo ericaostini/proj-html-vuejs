@@ -70,7 +70,6 @@ export default {
         right: 43%;
         z-index: 1;
         cursor: pointer;
-        font-weight: 300;
         background-color: $blueHeader;
         color: $lightColor;
         padding: 18px 60px;
@@ -104,6 +103,7 @@ export default {
 
 #footer-bottom {
     padding: 60px;
+    font-weight: $fontMild;
 
     .top-section {
         border-bottom: 1px solid $textGrey;

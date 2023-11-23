@@ -3,6 +3,7 @@
   <Main />
   <Footer />
   <Chat />
+  <button class="btn btn-light" @click="scrollTop()"><i class="fa-solid fa-arrow-up"></i></button>
 </template>
 
 <script>
@@ -19,6 +20,10 @@ export default {
     };
   },
   methods: {
+    scrollTop() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
 
   },
   components: { Header, Main, Footer, Chat }
@@ -27,4 +32,11 @@ export default {
 
 <style lang="scss" scoped>
 @use './assets/style/partials/variables' as *;
+
+button {
+  position: fixed;
+  bottom: 30px;
+  right: 120px;
+  z-index: 99;
+}
 </style>

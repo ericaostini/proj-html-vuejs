@@ -1,6 +1,6 @@
 <template>
     <button class="btn btn-light"><i class="fa-regular fa-comment" @click="showChat()"></i></button>
-    <div id="chat" class="bg-light hidden">
+    <div id="chat" class="bg-light" :class="show ? 'hidden' : 'show'">
         <div class="top-chat">
             <div class="d-flex justify-content-center">
                 <p class="m-2"><i class="fa-regular fa-message m-1"></i>Ask</p>
@@ -25,8 +25,8 @@
             <div class="d-flex align-items-center chat">
                 <i class="fa-regular fa-comment-dots m-3"></i>
                 <div>
-                    <p class="fs-6">Email</p>
-                    <p class="fs-6 fw-light">No time to wait around? We usually respond within a few hours</p>
+                    <p class="fs-6">Chat</p>
+                    <p class="fs-6 fw-light">We're online right now, talk with our team in realt time</p>
                 </div>
             </div>
         </div>
@@ -38,13 +38,12 @@ export default {
     name: 'Chat',
     data() {
         return {
-
+            show: false
         }
     },
     methods: {
         showChat() {
-            const chat = document.getElementById('chat');
-            chat.classList.toggle('hidden');
+            this.show = !this.show
         }
     },
 }
@@ -141,7 +140,14 @@ button {
     }
 }
 
+.show {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+
+}
+
 .hidden {
-    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
 }
 </style>

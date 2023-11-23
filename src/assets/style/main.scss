@@ -7,9 +7,13 @@ $fa-font-path: '../webfonts';
 @import '@fortawesome/fontawesome-free/scss/regular.scss';
 @import '@fortawesome/fontawesome-free/scss/brands.scss';
 
+@import url('https://fonts.googleapis.com/css2?family=Cantarell:wght@700&family=Raleway:wght@100;200;500;800&display=swap');
+
 body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     background-color: $blueHeader;
+    overflow-x: hidden;
+    font-family: $mainFont;
 }

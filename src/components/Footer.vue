@@ -1,5 +1,5 @@
 <template>
-    <section id="footer-top" class="text-center ">
+    <section id="footer-top" class="text-center">
         <h1 class="text-light">Let's talk about work</h1>
         <p class="text-light fw-light">A wonderful serenity has taken possession Far far away, behind the word
             mountains.
@@ -48,6 +48,7 @@ export default {
 
 #footer-top {
     position: relative;
+    width: 100%;
     background-image: url('../assets/images/business-people-working-together-on-project-and-B3MZ4TX.jpg');
     object-fit: cover;
     object-position: center;
@@ -56,6 +57,7 @@ export default {
 
     h1 {
         font-size: 50px;
+        font-family: $titleFont;
     }
 
     p {

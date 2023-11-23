@@ -101,7 +101,8 @@ header {
 
         h1 {
             font-size: 100px;
-            line-height: 90px;
+            line-height: 80px;
+            font-family: $titleFont;
         }
 
         button {

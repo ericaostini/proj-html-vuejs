@@ -2,7 +2,7 @@
     <main>
         <section id="consultant">
             <div class="d-flex align-items-center justify-content-between">
-                <h2>Our consultants can help you</h2>
+                <h2 class="text-uppercase">Our consultants can help you</h2>
                 <div class="border-green"></div>
             </div>
             <div class="info-consultant">
@@ -42,7 +42,7 @@
             </div>
             <div class="get-started me-4">
                 <div class="d-flex align-items-center justify-content-evenly">
-                    <h2 class="w-25">We help to deliver the business case</h2>
+                    <h2>We help to deliver the business case</h2>
                     <p class="fw-light">We find that success comes from employing an “inside company” approach to help
                         us better
                         understand the
@@ -54,19 +54,21 @@
         </section>
         <section id="project">
             <div class="container">
-                <div class="text-light text-uppercase fw-light">Project</div>
+                <h6 class="text-light text-uppercase fw-light">project</h6>
                 <h1 class="text-light text-uppercase pb-4">Our expert trusted consultants help clients</h1>
-                <div class="row justify-content-between">
-                    <div class="col-4" v-for="(project, indexP) in this.store.projects">
-                        <div class="project-card">
-                            <div class="image-project">
-                                <div class="bg-image">
-                                    <img :src="project.image" :alt="project.content">
+                <div class="container">
+                    <div class="row justify-content-between">
+                        <div class="col-lg-4 col-md-6 px-3" v-for="(project, indexP) in this.store.projects">
+                            <div class="project-card">
+                                <div class="image-project">
+                                    <div class="bg-image">
+                                        <img :src="project.image" :alt="project.content">
+                                    </div>
+                                    <h5 class="text-center pt-4">{{ project.content }}</h5>
                                 </div>
-                                <h5 class="text-center pt-4">{{ project.content }}</h5>
-                            </div>
-                            <div class="hidden-content">
-                                <h5>{{ project.content }}</h5>
+                                <div class="hidden-content">
+                                    <h5>{{ project.content }}</h5>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -75,41 +77,45 @@
         </section>
         <section id="testimonial">
             <h5 class="text-light text-center fw-light text-uppercase">testimonial</h5>
-            <h1 class="text-light p-4">What's the customer say about our work</h1>
-            <div class="row">
-                <div class="col-4 bg-light g-0" v-for="(opinion, indexOp) in this.store.opinions">
-                    <div class="container-overlay">
-                        <div class="front p-5">
-                            <p class="fw-light">{{ opinion.text }}</p>
-                            <h4 class="pt-5">{{ opinion.name }}</h4>
-                            <p>{{ opinion.company }}</p>
-                        </div>
-                        <div class="overlay">
-                            <img :src="opinion.image" :alt="opinion.name">
+            <h1 class="text-light p-5">What's the customer say about our work</h1>
+            <div class="container">
+                <div class="row">
+                    <div class="col-4 bg-light g-0" v-for="(opinion, indexOp) in this.store.opinions">
+                        <div class="container-overlay">
+                            <div class="front p-5">
+                                <p class="fw-light">{{ opinion.text }}</p>
+                                <h4 class="pt-5">{{ opinion.name }}</h4>
+                                <p>{{ opinion.company }}</p>
+                            </div>
+                            <div class="overlay">
+                                <img :src="opinion.image" :alt="opinion.name">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
         <section id="blog" class="px-4">
-            <div class="d-flex align-items-center">
-                <div class="border-green small-line"></div>
-                <h5 class="mx-3 text-uppercase pt-2 fw-light text-light">blog</h5>
-            </div>
-            <div class="d-flex justify-content-between align-items-center">
-                <h1 class="text-light">The recent news you must read it</h1>
-                <button class="btn text-uppercase">view all</button>
-            </div>
-            <div class="row justify-content-between">
-                <div class="col-6 blog-info" v-for="(blog, indexBlog) in this.store.blogInfo">
-                    <img :src="blog.image" :alt="blog.title">
-                    <div class="col-8 info-over">
-                        <div class="d-flex">
-                            <p>{{ blog.date }} - </p>
-                            <p> by {{ blog.name }}</p>
+            <div class="container">
+                <div class="d-flex align-items-center">
+                    <div class="border-green small-line"></div>
+                    <h5 class="mx-3 text-uppercase pt-2 fw-light text-light">blog</h5>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <h1 class="text-light">The recent news you must read it</h1>
+                    <button class="btn text-uppercase">view all</button>
+                </div>
+                <div class="row justify-content-between">
+                    <div class="col-6 blog-info" v-for="(blog, indexBlog) in this.store.blogInfo">
+                        <img :src="blog.image" :alt="blog.title">
+                        <div class="col-8 info-over">
+                            <div class="d-flex">
+                                <p>{{ blog.date }} - </p>
+                                <p> by {{ blog.name }}</p>
+                            </div>
+                            <h3>{{ blog.title }}</h3>
+                            <p class="text-dark fw-lighter fs-6">{{ blog.text }}</p>
                         </div>
-                        <h3>{{ blog.title }}</h3>
-                        <p class="text-dark fw-lighter fs-6">{{ blog.text }}</p>
                     </div>
                 </div>
             </div>
@@ -140,6 +146,8 @@ main {
 
         h2 {
             padding: 100px;
+            font-size: 30px;
+            font-family: $titleFont;
         }
 
         .info-consultant {
@@ -151,6 +159,10 @@ main {
                 padding: 15px;
                 border-radius: 50px;
                 color: $lightColor;
+            }
+
+            h4 {
+                font-family: $titleFont;
             }
         }
     }
@@ -167,15 +179,22 @@ main {
 
         h1 {
             font-size: 60px;
-            line-height: 60px;
+            line-height: 50px;
+            font-family: $titleFont;
         }
 
         .get-started {
             position: relative;
             background-color: $mainGreen;
             color: $blueHeader;
-            padding: 100px;
+            padding: 90px;
             margin-bottom: 160px;
+
+            h2 {
+                font-family: $titleFont;
+                width: 35%;
+                font-size: 40px;
+            }
 
             p {
                 width: 35%;
@@ -221,13 +240,38 @@ main {
     }
 
     #project {
-        margin-bottom: 180px;
+        margin-bottom: 160px;
         position: relative;
+
+        h6 {
+            color: #fff;
+            font-size: 25px;
+            text-transform: uppercase;
+            background: linear-gradient(to right, $blueHeader 10%, $mainRed 50%);
+            background-size: 200% auto;
+            color: #fff;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textclip 1.5s linear infinite;
+            display: inline-block;
+
+            @keyframes textclip {
+                to {
+                    background-position: 200% center;
+                }
+            }
+        }
+
+        h1 {
+            font-family: $titleFont;
+            width: 65%;
+        }
 
         .project-card {
             margin-top: 50px;
             position: relative;
-            width: 400px;
+            width: 360px;
             height: 300px;
             border-radius: 10px;
             box-shadow: 0 5px 20px $blueHeader;
@@ -289,8 +333,14 @@ main {
     #testimonial {
         margin-bottom: 160px;
 
+        h5 {
+            text-decoration: underline 3px $mainRed;
+        }
+
         h1 {
             text-align: end;
+            font-family: $titleFont;
+            text-transform: uppercase;
         }
 
         .container-overlay {
@@ -332,7 +382,7 @@ main {
     button {
         position: absolute;
         top: 20px;
-        right: 25px;
+        right: 70px;
         z-index: 1;
         cursor: pointer;
         font-weight: 300;
@@ -365,10 +415,16 @@ main {
         }
     }
 
+    h1 {
+        font-family: $titleFont;
+        text-transform: uppercase;
+        margin-bottom: 50px;
+    }
+
     .blog-info {
 
         img {
-            width: 660px;
+            width: 100%;
             position: relative;
             transition: 0.5s all ease-in-out;
         }
@@ -376,7 +432,7 @@ main {
         .info-over {
             position: relative;
             top: -200px;
-            right: -215px;
+            right: -180px;
             font-size: 20px;
             padding: 40px 60px;
             z-index: 2;
@@ -404,7 +460,7 @@ main {
 }
 
 .border-green {
-    width: 50%;
+    width: 40%;
     height: 4px;
     border: 2px solid $mainGreen;
 

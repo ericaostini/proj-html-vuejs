@@ -220,7 +220,7 @@ main {
             position: absolute;
             bottom: 0;
             right: 0;
-            z-index: 1;
+            z-index: 3;
             cursor: pointer;
             font-weight: 300;
             background-color: $mainRed;

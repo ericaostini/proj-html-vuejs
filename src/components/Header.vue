@@ -95,6 +95,7 @@ header {
             background-color: $blueHeader;
             width: 30%;
             position: absolute;
+            z-index: 50;
             top: 80px;
             right: 20px;
             padding: 20px;

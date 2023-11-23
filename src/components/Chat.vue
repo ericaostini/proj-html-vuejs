@@ -1,5 +1,6 @@
 <template>
-    <div id="chat" class="bg-light">
+    <button class="btn btn-light"><i class="fa-regular fa-comment" @click="showChat()"></i></button>
+    <div id="chat" class="bg-light hidden">
         <div class="top-chat">
             <div class="d-flex justify-content-center">
                 <p class="m-2"><i class="fa-regular fa-message m-1"></i>Ask</p>
@@ -34,12 +35,43 @@
 
 <script>
 export default {
-    name: 'Chat'
+    name: 'Chat',
+    data() {
+        return {
+
+        }
+    },
+    methods: {
+        showChat() {
+            const chat = document.getElementById('chat');
+            chat.classList.toggle('hidden');
+        }
+    },
 }
 </script>
 
 <style lang="scss" scoped>
 @use '../assets/style/partials/variables' as *;
+
+button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 100;
+    padding: 12px 15px;
+    background-color: $chatColor;
+    border-radius: 50px;
+    border-color: $chatColor;
+
+    i {
+        font-size: 30px;
+        color: $lightColor;
+    }
+
+    &:hover i {
+        color: black;
+    }
+}
 
 #chat {
     position: fixed;
@@ -107,5 +139,9 @@ export default {
             }
         }
     }
+}
+
+.hidden {
+    display: none;
 }
 </style>

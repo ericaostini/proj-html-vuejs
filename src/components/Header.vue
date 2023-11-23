@@ -11,7 +11,7 @@
                         <ul class="nav d-flex justify-content-end ">
                             <li class="nav-item d-flex" v-for="(item, navIndex) in this.store.navBar">
                                 <a class="nav-link pt-4 mx-2 text-light" href="#"
-                                    :class="item.active === true ? 'border-active' : 'hover-effect'">{{
+                                    :class="item.active ? 'border-active' : 'hover-effect'" @click="displayActive()">{{
                                         item.navItem }}</a>
                             </li>
                         </ul>
@@ -60,6 +60,9 @@ export default {
     methods: {
         showMenu() {
             this.menu = !this.menu
+        },
+        displayActive() {
+            this.store.item.active = !this.store.item.active
         }
     },
 }

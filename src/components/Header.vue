@@ -2,8 +2,9 @@
     <header>
         <div class="nav-position">
             <div class="px-4">
-                <div class="row align-items-center justify-content-between">
-                    <div class="col-lg-2 col-md-2 col-sm-3 logo">
+                <div
+                    class="row align-items-lg-center justify-content-lg-between align-items-md-center align-items-sm-center justify-content-md-between justify-content-sm-between  ">
+                    <div class="col-lg-2 col-md-2 col-sm-2 logo">
                         <img :src="'/images/logotype.png'" alt="logo Phlox">
                     </div>
                     <div class="col-lg-10 col-md-10 d-sm-none d-lg-block d-md-block">
@@ -12,6 +13,17 @@
                                 <a class="nav-link pt-4 mx-2 text-light" href="#"
                                     :class="item.active === true ? 'border-active' : 'hover-effect'">{{
                                         item.navItem }}</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-2 d-lg-none d-md-none d-sm-block pt-4">
+                        <button class="btn"><i class="fa-solid fa-bars fs-3" @click="showMenu()"></i></button>
+                    </div>
+                    <div class="hamburger-menu" :class="menu ? 'show-menu' : 'not-menu'">
+                        <ul>
+                            <li v-for="(item, navIndex) in this.store.navBar">
+                                <a class="text-light" href="#">{{
+                                    item.navItem }}</a>
                             </li>
                         </ul>
                     </div>
@@ -41,7 +53,13 @@ export default {
     name: 'Header',
     data() {
         return {
-            store
+            store,
+            menu: false
+        }
+    },
+    methods: {
+        showMenu() {
+            this.menu = !this.menu
         }
     },
 }
@@ -70,6 +88,27 @@ header {
                 width: auto;
                 height: 20px;
             }
+        }
+
+        .hamburger-menu {
+            cursor: pointer;
+            background-color: $blueHeader;
+            width: 30%;
+            position: absolute;
+            top: 80px;
+            right: 20px;
+            padding: 20px;
+
+            li {
+                list-style: none;
+                line-height: 40px;
+
+                a {
+                    text-decoration: none;
+
+                }
+            }
+
         }
 
     }
@@ -187,5 +226,13 @@ header {
         width: 0;
         transition: width .8s;
     }
+}
+
+.not-menu {
+    opacity: 0;
+}
+
+.show-menu {
+    opacity: 1;
 }
 </style>
